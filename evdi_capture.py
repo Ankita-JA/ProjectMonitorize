@@ -42,7 +42,7 @@ lib.evdi_grab_pixels.argtypes     = [ctypes.c_void_p,ctypes.POINTER(EvdiRect),ct
 lib.evdi_handle_events.argtypes   = [ctypes.c_void_p,ctypes.POINTER(EvdiEventContext),ctypes.c_int]
 
 MAX_RECTS = 16
-state = {"handle":None,"width":1920,"height":1080,"fb":None,"rects":None,
+state = {"handle":None,"width":2560,"height":1600,"fb":None,"rects":None,
          "evdi_buf":None,"registered":False,"crtc_on":False,
          "frame_count":0,"fps_timer":time.time()}
 
@@ -209,10 +209,10 @@ if not handle:
     sys.exit(1)
 state["handle"] = handle
 
-fb, rects, buf = make_buffer(1920, 1080)
+fb, rects, buf = make_buffer(2560, 1600)
 state["fb"] = fb; state["rects"] = rects; state["evdi_buf"] = buf
 
-lib.evdi_connect(handle, EDID, len(EDID), 1920 * 1080)
+lib.evdi_connect(handle, EDID, len(EDID), 2560 * 1600)
 lib.evdi_register_buffer(handle, buf)
 state["registered"] = True
 print("Connected + buffer pre-registered.")

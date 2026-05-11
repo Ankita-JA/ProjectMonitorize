@@ -12,10 +12,10 @@ set -euo pipefail
 
 # ── Config ────────────────────────────────────────────────────────────────────
 PORT=7110
-WIDTH=1280
-HEIGHT=800
+WIDTH=2560
+HEIGHT=1600
 FPS=60
-BITRATE=6000        # kbps — raise to 10000 if USB quality allows
+BITRATE=15000        # kbps — high quality for 1600p
 DISPLAY_NAME="TabletDisplay"
 VIRTUAL_OUTPUT_NAME=""   # filled in at runtime after krfb creates the display
 

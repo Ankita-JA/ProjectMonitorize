@@ -2,4 +2,5 @@
 <resources>
 
     <style name="Theme.Monitorize" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Monitorize.NoActionBar" parent="Theme.Monitorize" />
 </resources>

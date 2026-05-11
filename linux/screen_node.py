@@ -20,8 +20,8 @@ def launch_streaming(fd, node_id):
         f"queue max-size-buffers=2 ! "
         f"videoconvert n-threads=4 ! "
         f"videoscale ! "
-        f"video/x-raw,format=I420,width=1280,height=720 ! "
-        f"x264enc tune=zerolatency speed-preset=ultrafast bitrate=3000 ! "
+        f"video/x-raw,format=I420,width=2560,height=1600 ! "
+        f"x264enc tune=zerolatency speed-preset=ultrafast bitrate=15000 key-int-max=30 ! "
         f"h264parse config-interval=1 ! "
         f"tcpclientsink host=127.0.0.1 port=7110"
     )
